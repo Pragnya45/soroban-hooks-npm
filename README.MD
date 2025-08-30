@@ -1,6 +1,4 @@
 ```markdown
-![Logo](https://app.nexaflow.xyz/logo.png)
-
 # soroban-hooks
 
 A lightweight JavaScript/TypeScript SDK for interacting with Soroban-based services.  
