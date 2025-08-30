@@ -1,0 +1,35 @@
+{
+  "name": "soroban-hooks",
+  "version": "1.0.9",
+  "description": "Soroban smart contract watcher and transaction helper",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "soroban",
+    "stellar",
+    "contracts",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.11.0"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.52.11",
+    "@types/axios": "^0.9.36",
+    "typescript": "^5.9.2"
+  }
+}

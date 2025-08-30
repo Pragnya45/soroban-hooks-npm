@@ -1,0 +1,15 @@
+# Ignore all source code
+src/
+test.js
+
+# Ignore configuration and dev files
+tsconfig.json
+.npmignore
+.gitignore
+
+# Ignore dependency and log files
+node_modules/
+*.log
+
+# Ignore build cache
+dist/types/*.tsbuildinfo
