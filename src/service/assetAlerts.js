@@ -27,15 +27,20 @@ class AssetAlerts {
     }
 
     // ✅ Get All Asset Price Alerts
-    async getAll({ page = 1, limit = 10 }) {
+    async getAll({ page = 1, limit = 10 } = {}) {
+        const params = {};
+        if (page !== undefined) params.page = page;
+        if (limit !== undefined) params.limit = limit;
+
         const res = await axios({
             url: urlConfig.getAllAssetAlerts(),
             method: "get",
             headers: { "x-api-key": this.apiKey },
-            params: { page, limit },
+            params,
         });
         return res.data;
     }
+
 
     // ✅ Get Specific Asset Price Alert
     async getById(id) {

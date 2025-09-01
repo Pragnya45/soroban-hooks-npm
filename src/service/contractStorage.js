@@ -6,7 +6,7 @@ class ContractStorage {
         this.apiKey = apiKey;
     }
 
-    async fetch(address, page = 1, limit = 20) {
+    async fetch(address, { page = 1, limit = 10 } = {}) {
         if (!address) {
             throw new Error("Contract address is required");
         }
@@ -23,6 +23,7 @@ class ContractStorage {
             throw new Error(error?.response?.data?.message || error.message);
         }
     }
+
 }
 
 export default ContractStorage;

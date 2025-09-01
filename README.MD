@@ -54,7 +54,13 @@ console.log(createdAlert);
 
 ```javascript
 // Get All Asset Alerts
-const allAlerts = await sdk.AssetAlerts.getAll({ page: 1, limit: 10 });
+
+// Without params (uses defaults: page = 1, limit = 10)
+const allAlerts = await sdk.AssetAlerts.getAll();
+console.log(allAlerts);
+
+// With custom pagination
+const allAlerts = await sdk.AssetAlerts.getAll({ page: 2, limit: 25 });
 console.log(allAlerts);
 ```
 
@@ -101,9 +107,15 @@ console.log(createdWatcher);
 
 ```javascript
 // Get All Wallet Transaction Alerts
+
+// Without pagination params (defaults: page = 1, limit = 10)
+const allWatchers = await sdk.WalletTransactionAlert.getAll();
+console.log(allWatchers);
+
+// With custom pagination
 const allWatchers = await sdk.WalletTransactionAlert.getAll({
-  page: 1,
-  limit: 10,
+  page: 2,
+  limit: 25,
 });
 console.log(allWatchers);
 ```
@@ -147,9 +159,15 @@ const createdBalanceWatcher = await sdk.WalletBalanceAlert.create({
 console.log(createdBalanceWatcher);
 
 // Get All Wallet Balance Alerts
+
+// Without pagination params (defaults: page = 1, limit = 10)
+const allBalanceAlerts = await sdk.WalletBalanceAlert.getAll();
+console.log(allBalanceAlerts);
+
+// With custom pagination
 const allBalanceAlerts = await sdk.WalletBalanceAlert.getAll({
-  page: 1,
-  limit: 10,
+  page: 2,
+  limit: 25,
 });
 console.log(allBalanceAlerts);
 
@@ -196,11 +214,15 @@ console.log(history);
 <div id="contract-transactions"></div>
 
 ```javascript
-const transactions = await sdk.ContractTransactions.fetch(
-  "CONTRACT_ADDRESS",
-  1,
-  20
-);
+// Without pagination params (defaults: page = 1, limit = 10)
+const transactions = await sdk.ContractTransactions.fetch("CONTRACT_ADDRESS");
+console.log(transactions);
+
+// With custom pagination
+const transactions = await sdk.ContractTransactions.fetch("CONTRACT_ADDRESS", {
+  page: 2,
+  limit: 50,
+});
 console.log(transactions);
 ```
 
@@ -211,7 +233,15 @@ console.log(transactions);
 <div id="contract-storage"></div>
 
 ```javascript
-const storage = await sdk.ContractStorage.fetch("CONTRACT_ADDRESS", 1, 20);
+// Without pagination params (defaults: page = 1, limit = 10)
+const storage = await sdk.ContractStorage.fetch("CONTRACT_ADDRESS");
+console.log(storage);
+
+// With custom pagination
+const storage = await sdk.ContractStorage.fetch("CONTRACT_ADDRESS", {
+  page: 2,
+  limit: 50,
+});
 console.log(storage);
 ```
 
@@ -233,9 +263,15 @@ const createdContractWatcher = await sdk.ContractWatchers.create({
 console.log(createdContractWatcher);
 
 // Get All Contract Watchers
+
+// Without pagination params (defaults: page = 1, limit = 10)
+const allContractWatchers = await sdk.ContractWatchers.getAll();
+console.log(allContractWatchers);
+
+// With custom pagination
 const allContractWatchers = await sdk.ContractWatchers.getAll({
-  page: 1,
-  limit: 10,
+  page: 2,
+  limit: 25,
 });
 console.log(allContractWatchers);
 
@@ -276,7 +312,3 @@ console.log(deletedContractWatcher);
 Thanks to the contributors and maintainers of underlying libraries like Axios and the Soroban ecosystem.
 
 ---
-
-```
-
-```

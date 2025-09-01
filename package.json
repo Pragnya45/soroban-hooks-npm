@@ -1,6 +1,6 @@
 {
   "name": "soroban-hooks",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Soroban smart contract watcher and transaction helper",
   "type": "module",
   "main": "./dist/index.js",

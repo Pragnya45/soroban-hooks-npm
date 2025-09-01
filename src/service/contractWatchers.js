@@ -22,7 +22,7 @@ class ContractWatchers {
     }
 
     // Get All
-    async getAll({ page = 1, limit = 10 }) {
+    async getAll({ page = 1, limit = 10 } = {}) {
         try {
             const res = await axios({
                 url: urlConfig.getAllContractTransactionWatchers(),
@@ -35,6 +35,7 @@ class ContractWatchers {
             throw new Error(error?.response?.data?.message || error.message);
         }
     }
+
 
     // Get By ID
     async getById(id) {

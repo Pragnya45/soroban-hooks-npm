@@ -20,7 +20,7 @@ class WalletTransactionAlert {
         }
     }
 
-    async getAll({ page = 1, limit = 10 }) {
+    async getAll({ page = 1, limit = 10 } = {}) {
         try {
             const res = await axios({
                 url: urlConfig.getAllWalletTransactionWatchers(),
@@ -33,6 +33,7 @@ class WalletTransactionAlert {
             throw new Error(error?.response?.data?.message || error.message);
         }
     }
+
 
     async getById(id) {
         try {
