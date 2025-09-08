@@ -198,11 +198,20 @@ console.log(deletedBalanceAlert);
 <div id="asset-price-history"></div>
 
 ```javascript
+// without offset (API default = 1m)
 const history = await sdk.AssetsPriceHistory.getPriceHistory({
-  code: "USDC",
-  issuer: "ASSET_ISSUER_ADDRESS",
-  startTimestamp: 1725100000,
-  endTimestamp: 1725200000,
+  code: "XLM",
+  startTimestamp: 1725753600,
+  endTimestamp: 1725840000,
+});
+console.log(history);
+
+// with offset
+const history = await sdk.AssetsPriceHistory.getPriceHistory({
+  code: "XLM",
+  startTimestamp: 1725753600,
+  endTimestamp: 1725840000,
+  offset: "5m",
 });
 console.log(history);
 ```

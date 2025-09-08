@@ -3,11 +3,10 @@ import urlConfig from "../utils/urlConfig.js";
 
 class AssetsPriceHistory {
     constructor(apiKey) {
-
         this.apiKey = apiKey;
     }
 
-    async getPriceHistory({ code, issuer, startTimestamp, endTimestamp }) {
+    async getPriceHistory({ code, issuer, startTimestamp, endTimestamp, offset = "1m" }) {
         try {
             if (!code) throw new Error("Asset code is required");
             if (!startTimestamp) throw new Error("startTimestamp is required");
@@ -24,6 +23,7 @@ class AssetsPriceHistory {
                     issuer,
                     startTimestamp,
                     endTimestamp,
+                    offset,
                 },
             });
 
