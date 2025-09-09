@@ -198,7 +198,7 @@ console.log(deletedBalanceAlert);
 <div id="asset-price-history"></div>
 
 ```javascript
-// without offset (API default = 1m)
+// ✅ Native asset (XLM) — issuer is NOT required, without offset (API default = 1m)
 const history = await sdk.AssetsPriceHistory.getPriceHistory({
   code: "XLM",
   startTimestamp: 1725753600,
@@ -206,12 +206,22 @@ const history = await sdk.AssetsPriceHistory.getPriceHistory({
 });
 console.log(history);
 
-// with offset
+// ✅ Native asset (XLM) with offset
 const history = await sdk.AssetsPriceHistory.getPriceHistory({
   code: "XLM",
   startTimestamp: 1725753600,
   endTimestamp: 1725840000,
   offset: "5m",
+});
+console.log(history);
+
+// ✅ Non-native asset (requires issuer)
+const history = await sdk.AssetsPriceHistory.getPriceHistory({
+  code: "USDC",
+  issuer: "GA5ZSEJYB37JRC5AVOA4H2KQ3YBFC2F3VJNL3HLHQE7VJYI3J2GZXJZ4",
+  startTimestamp: 1725753600,
+  endTimestamp: 1725840000,
+  offset: "1h",
 });
 console.log(history);
 ```
