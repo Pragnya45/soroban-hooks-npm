@@ -1,6 +1,6 @@
 {
   "name": "soroban-hooks",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Soroban smart contract watcher and transaction helper",
   "type": "module",
   "main": "./dist/index.js",
@@ -8,9 +8,13 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",

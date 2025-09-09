@@ -1,15 +1,22 @@
-# Ignore all source code
+# Ignore all source files and tests
 src/
 test.js
 
-# Ignore configuration and dev files
+# Ignore configuration and dev-only files
 tsconfig.json
 .npmignore
 .gitignore
+.api-extractor.json
+*.md
+.vscode/
+.idea/
 
-# Ignore dependency and log files
+# Ignore dependencies and logs
 node_modules/
 *.log
 
 # Ignore build cache
 dist/types/*.tsbuildinfo
+
+# Ignore system files
+.DS_Store
